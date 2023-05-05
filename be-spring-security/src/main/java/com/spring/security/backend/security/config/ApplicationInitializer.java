@@ -6,8 +6,9 @@ public class ApplicationInitializer extends AbstractAnnotationConfigDispatcherSe
 
 	@Override
 	protected Class<?>[] getRootConfigClasses() {
-		
-		// Ensure that WebSecurityConfig was loaded in our existing ApplicationInitializer
+
+		// Ensure that WebSecurityConfig was loaded in our existing
+		// ApplicationInitializer
 		return new Class[] { WebSecurityConfig.class };
 	}
 

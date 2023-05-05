@@ -1,4 +1,4 @@
-package com.spring.security.backend.controller;
+package com.spring.security.backend.api.controller;
 
 import org.springframework.web.bind.annotation.CrossOrigin;
 import org.springframework.web.bind.annotation.GetMapping;
@@ -15,8 +15,13 @@ public class TestController {
 		return "Hello first!";
 	}
 	
-	@GetMapping("/private/second")
+	@GetMapping("/private/first")
 	public String getSecond() {
+		return "Hello first!";
+	}
+	
+	@GetMapping("/first")
+	public String getThird() {
 		return "Hello first!";
 	}
 }

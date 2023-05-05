@@ -1,0 +1,12 @@
+{"properties": [
+  {
+    "name": "service.name",
+    "type": "java.lang.String",
+    "description": "A description for 'service.name'"
+  },
+  {
+    "name": "pattern.date.time",
+    "type": "java.lang.String",
+    "description": "A description for 'pattern.date.time'"
+  }
+]}

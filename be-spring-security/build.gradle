@@ -18,9 +18,10 @@ dependencies {
 
 // https://mvnrepository.com/artifact/org.springframework.boot/spring-boot-starter-security
 implementation 'org.springframework.boot:spring-boot-starter-security:3.0.6'
+// https://mvnrepository.com/artifact/javax.xml/jaxws-api
+implementation 'javax.xml:jaxws-api:2.0'
 
 
-	
 	
 	//Lombok
 	compileOnly 'org.projectlombok:lombok'
