@@ -36,7 +36,6 @@ public class ExceptionHandlerFilter extends OncePerRequestFilter {
 				response.getWriter().write(toJson(new ExceptionDto(baseException.getStatus(), ex.getMessage(), request)));
 				response.setContentType(MediaType.APPLICATION_JSON_VALUE);
 			}
-
 		}
 	}
 
