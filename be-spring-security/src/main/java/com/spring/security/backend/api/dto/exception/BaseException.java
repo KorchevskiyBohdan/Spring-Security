@@ -4,7 +4,7 @@ import jakarta.servlet.ServletException;
 import lombok.Getter;
 
 @Getter
-public class BaseException extends ServletException{
+public class BaseException extends RuntimeException{
 
 	private Integer status;
 	

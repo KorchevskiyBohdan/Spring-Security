@@ -8,15 +8,16 @@ import org.springframework.web.bind.annotation.RestController;
 
 import com.spring.security.backend.api.dto.exception.TestExceptionDto;
 
+
+
 @CrossOrigin
 @RestController
 @RequestMapping
 public class TestController {
 
 	@GetMapping("/public/first")
-	public String getFirst() {
+	public String getFirst(){
 		throw new TestExceptionDto("Test exception", HttpStatus.OK.value());
-
 	}
 	
 	@GetMapping("/private/first")

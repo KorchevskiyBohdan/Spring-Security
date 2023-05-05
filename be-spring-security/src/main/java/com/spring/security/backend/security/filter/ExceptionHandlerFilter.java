@@ -33,7 +33,12 @@ public class ExceptionHandlerFilter extends OncePerRequestFilter {
 			if (ex instanceof BaseException) {
 				var baseException = (BaseException) ex;
 				response.setStatus(baseException.getStatus());
-				response.getWriter().write(toJson(new ExceptionDto(baseException.getStatus(), ex.getMessage(), request)));
+				response.getWriter().write(toJson(new ExceptionDto(baseException.getStatus(), baseException.getMessage(), request)));
+				response.setContentType(MediaType.APPLICATION_JSON_VALUE);
+			} else if (ex instanceof Throwable){
+				var baseException = (BaseException) ex.getCause();
+				response.setStatus(baseException.getStatus());
+				response.getWriter().write(toJson(new ExceptionDto(baseException.getStatus(), baseException.getMessage(), request)));
 				response.setContentType(MediaType.APPLICATION_JSON_VALUE);
 			}
 		}
