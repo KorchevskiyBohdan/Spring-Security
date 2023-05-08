@@ -24,7 +24,7 @@ public class ExceptionHandlerFilter extends OncePerRequestFilter {
 
 	private final static String FILTER_LOG_TITLE = getFormatedTitle(ExceptionHandlerFilter.class.getSimpleName());
 	private final static String EXCEPTION_LOG_PART = getFormatedExceptionLogPart(ExceptionHandlerFilter.class.getSimpleName());
-	
+
 	@Override
 	public void doFilterInternal(HttpServletRequest request, HttpServletResponse response, FilterChain filterChain)
 			throws IOException, JsonProcessingException {
@@ -34,9 +34,9 @@ public class ExceptionHandlerFilter extends OncePerRequestFilter {
 			filterChain.doFilter(request, response);
 		} catch (Throwable ex) {
 			log.error("%s %s".formatted(EXCEPTION_LOG_PART, ex.getMessage()));
-			
-			if (ex.getCause() instanceof BaseException) { 
-				var baseException = (BaseException) ex.getCause(); 
+
+			if (ex.getCause() instanceof BaseException) {
+				var baseException = (BaseException) ex.getCause();
 				populateErrorResponse(baseException.getStatus(), baseException.getMessage(), request, response);
 			} else if (ex instanceof BaseException) {
 				var baseException = (BaseException) ex;
@@ -46,7 +46,7 @@ public class ExceptionHandlerFilter extends OncePerRequestFilter {
 			}
 		}
 	}
-	
+
 	private void populateErrorResponse(Integer status, String message, HttpServletRequest request,
 			HttpServletResponse response) throws JsonProcessingException, IOException {
 
