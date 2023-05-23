@@ -3,8 +3,6 @@ package com.spring.security.backend.security.config;
 import org.springframework.security.config.annotation.web.builders.HttpSecurity;
 import org.springframework.security.config.annotation.web.configurers.AbstractHttpConfigurer;
 import org.springframework.security.web.authentication.logout.LogoutFilter;
-import org.springframework.security.web.header.HeaderWriterFilter;
-import org.springframework.security.web.session.DisableEncodeUrlFilter;
 
 import com.spring.security.backend.security.filter.ExceptionHandlerFilter;
 

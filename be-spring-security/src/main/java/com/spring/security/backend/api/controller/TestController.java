@@ -1,6 +1,7 @@
 package com.spring.security.backend.api.controller;
 
 import org.springframework.http.HttpStatus;
+import org.springframework.security.core.context.SecurityContextHolder;
 import org.springframework.web.bind.annotation.CrossOrigin;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RequestHeader;
@@ -21,6 +22,7 @@ public class TestController {
 	
 	@GetMapping("/private/first")
 	public String getSecond(@RequestHeader("TEST") String header) {
+		var a = SecurityContextHolder.getContext().getAuthentication();
 		return header + " ---- Hello first!";
 	}
 	

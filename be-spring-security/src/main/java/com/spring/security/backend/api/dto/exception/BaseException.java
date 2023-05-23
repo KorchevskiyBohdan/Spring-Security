@@ -1,6 +1,5 @@
 package com.spring.security.backend.api.dto.exception;
 
-import jakarta.servlet.ServletException;
 import lombok.Getter;
 
 @Getter
