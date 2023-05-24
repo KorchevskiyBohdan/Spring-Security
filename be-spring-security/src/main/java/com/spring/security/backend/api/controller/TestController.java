@@ -15,19 +15,19 @@ import com.spring.security.backend.api.dto.exception.TestExceptionDto;
 @RequestMapping
 public class TestController {
 
-	@GetMapping("/public/first")
-	public String getFirst(){
-		throw new TestExceptionDto("Test exception", HttpStatus.OK.value());
-	}
-	
-	@GetMapping("/private/first")
-	public String getSecond(@RequestHeader("TEST") String header) {
-		var a = SecurityContextHolder.getContext().getAuthentication();
-		return header + " ---- Hello first!";
-	}
-	
-	@GetMapping("/first")
-	public String getThird(@RequestHeader("TEST") String header) {
-		return header + " ---- Hello first!";
-	}
+    @GetMapping("/public/first")
+    public String getFirst() {
+        throw new TestExceptionDto("Test exception", HttpStatus.OK.value());
+    }
+
+    @GetMapping("/private/first")
+    public String getSecond(@RequestHeader("TEST") String header) {
+        var auth = SecurityContextHolder.getContext().getAuthentication();
+        return header + " ---- Hello first!";
+    }
+
+    @GetMapping("/first")
+    public String getThird(@RequestHeader("TEST") String header) {
+        return header + " ---- Hello first!";
+    }
 }

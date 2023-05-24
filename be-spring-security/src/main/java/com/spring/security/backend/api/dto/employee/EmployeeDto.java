@@ -18,6 +18,7 @@ public class EmployeeDto {
 
     private Integer id;
     private Integer tenantId;
+    private String email;
 
     @Builder.Default
     private List<Role> authorities = new ArrayList<>();

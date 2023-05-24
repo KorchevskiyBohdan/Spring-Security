@@ -8,17 +8,17 @@ import com.spring.security.backend.security.filter.ExceptionHandlerFilter;
 
 public class BaseSecurityDslConfig extends AbstractHttpConfigurer<BaseSecurityDslConfig, HttpSecurity> {
 
-	@Override
-	public void init(HttpSecurity http) throws Exception {
-		http.csrf().disable().cors();
-	}
+    @Override
+    public void init(HttpSecurity http) throws Exception {
+        http.csrf().disable().cors();
+    }
 
-	@Override
-	public void configure(HttpSecurity http) throws Exception {
-		http.addFilterBefore(new ExceptionHandlerFilter(), LogoutFilter.class);
-	}
+    @Override
+    public void configure(HttpSecurity http) throws Exception {
+        http.addFilterBefore(new ExceptionHandlerFilter(), LogoutFilter.class);
+    }
 
-	public static BaseSecurityDslConfig baseSecurityDslConfig() {
-		return new BaseSecurityDslConfig();
-	}
+    public static BaseSecurityDslConfig baseSecurityDslConfig() {
+        return new BaseSecurityDslConfig();
+    }
 }
